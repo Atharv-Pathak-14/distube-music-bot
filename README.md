@@ -10,7 +10,7 @@ An advanced Music Bot based on distube.js.org
 
  **1.** Install [node.js v12](https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode) or higher
 
- **2.** Install [ffmpeg@latest](https://ffmpeg.org) 
+ **2.** Install [ffmpeg@test](https://ffmpeg.org) 
 
  **3.** Download this repo and unzip it    |    or git clone it
  
