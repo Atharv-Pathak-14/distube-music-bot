@@ -47,13 +47,13 @@ const distube = new DisTube(client, {
 })
 let stateswitch = false;
 let emojis = [
-  "✅",
-  "☑️",
-  "👌",
+  "👍🏻",
+  "👍🏿",
+  "👍🏾",
+  "👍🏻",
   "👍",
-  "❤️",
-  "🎶",
-  "🎵"
+  "👍🏼",
+  "👍🏽"
 ];
 const filters = [
   "mcompand",
