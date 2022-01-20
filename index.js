@@ -619,16 +619,9 @@ async function playsongyes(message, queue, song) {
 
       .setColor("#fffff0")
       .setTitle("Playing Song!")
-      .setDescription(`Song: [\`${song.name}\`](${song.url})`)
+      .setDescription(`Song: \`${song.name}\``)
       .addField("⏱ Duration:", ` \`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
-      .addField("🌀 Queue:", `\`${queue.songs.length} song(s) - ${queue.formattedDuration}\``, true)
-      .addField("🔊 Volume:", `\`${queue.volume} %\``, true)
-      .addField("♾ Loop:", `  \`${queue.repeatMode ? queue.repeatMode === 2 ? "✅ Queue" : "✅ Song" : "❌"}\``, true)
-      .addField("↪️ Autoplay:", `\`${queue.autoplay ? "✅" : "❌"}\``, true)
-      .addField("❔ Filter:", `\`${queue.filter || "❌"}\``, true)
       .setFooter(client.user.username, client.user.displayAvatarURL())
-      .setAuthor(message.author.tag, message.member.user.displayAvatarURL({ dynamic: true }), "https://harmonymusic.tk")
-      .setThumbnail(song.thumbnail)
 
     var playingMessage = await message.channel.send(embed1)
 
@@ -815,14 +808,9 @@ function curembed(message) {
       .setTitle("Playing Song!")
       .setDescription(`Song: [\`${song.name}\`](${song.url})`)
       .addField("⏱ Duration:", `\`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
-      .addField("🌀 Queue:", `\`${queue.songs.length} song(s) - ${queue.formattedDuration}\``, true)
-      .addField("🔊 Volume:", `\`${queue.volume} %\``, true)
-      .addField("♾ Loop:", `\`${queue.repeatMode ? queue.repeatMode === 2 ? "✅ Queue" : "✅ Song" : "❌"}\``, true)
-      .addField("↪️ Autoplay:", `\`${queue.autoplay ? "✅" : "❌"}\``, true)
-      .addField("❔ Filter:", `\`${queue.filter || "❌"}\``, true)
+
       .setFooter(client.user.username, client.user.displayAvatarURL())
-      .setAuthor(message.author.tag, message.member.user.displayAvatarURL({ dynamic: true }), "https://harmonymusic.tk")
-      .setThumbnail(song.thumbnail)
+
     return embed; //sending the new embed back
   } catch (error) {
     console.error
