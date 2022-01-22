@@ -233,7 +233,7 @@ client.on("message", async message => {
           userinput = 1;
         }
         searchembed.delete({ timeout: Number(client.ws.ping) });
-      }).catch(() => { console.log(console.error); userinput = 404 });
+      }).catch(() => { userinput = 404 });
       if (userinput === 404) {
         return embedbuilder(client, message, "RED", "Something went wrong!")
       }
@@ -271,7 +271,7 @@ client.on("message", async message => {
 
       let queue = distube.getQueue(message);
 
-      if (!queue) return embedbuilder(client, message, "RED", "There is nothing playing!").then(msg => msg.delete({ timeout: 5000 }).catch(console.error));
+      if (!queue) return embedbuilder(client, message, "RED", "There is nothing playing!").then(msg => msg.delete({ timeout: 5000 }).catch());
 
       let cursong = queue.songs[0];
       embedbuilder(client, message, "#fffff0", "Searching!").then(msg => msg.delete({ timeout: 5000 }).catch(console.error));
@@ -335,13 +335,13 @@ client.on("message", async message => {
     }
     else if (command == "playskip" || command == "ps") {
       embedbuilder(client, message, "#fffff0", "Searching and Skipping!", args.join(" "))
+      await distube.playSkip(message, args.join(" "));
       try {
-        await message.guild.channels.cache.get(db.get(`playingchannel_${message.guild.id}`)).messages.cache.get(db.get(`playingembed_${message.guild.id}`), false, true).delete().catch(console.error);
+        await message.guild.channels.cache.get(db.get(`playingchannel_${message.guild.id}`)).messages.cache.get(db.get(`playingembed_${message.guild.id}`), false, true).delete()
       } catch (error) {
-        console.error(error)
-
+      return
       }
-      return distube.playSkip(message, args.join(" "));
+      
     }
     else if (command == "autoplay" || command == "ap") {
       await embedbuilder(client, message, "#fffff0", `Autoplay is now on ${distube.toggleAutoplay(message) ? "ON" : "OFF"}!`)
@@ -363,7 +363,7 @@ client.on("message", async message => {
       return embedbuilder(client, message, `#fffff0`, `UPTIME:`, `\`${days}d\` \`${hours}h\` \`${minutes}m\` \`${seconds}s\n\``)
     }
     else if (command === "vergegeg" || command === "gegegreg") {
-      embedbuilder(client, message, "#fffff0", "Searching!", args.join(" ")).then(msg => msg.delete({ timeout: 5000 }).catch(console.error))
+      embedbuilder(client, message, "#fffff0", "Searching!", args.join(" ")).then(msg => msg.delete({ timeout: 5000 }).catch())
       return distube.play(message, args.join(" "));
     }
     else if (command === "skip" || command === "s") {
@@ -586,7 +586,7 @@ distube
   })
   .on("initQueue", queue => {
     try {
-    queue.autoplay = false;
+      queue.autoplay = false;
       queue.volume = 100;
       queue.filter = filters[5];
     } catch (error) {
