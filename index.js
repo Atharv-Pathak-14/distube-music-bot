@@ -54,6 +54,7 @@ let emojis = [
   "👍",
   "👍🏼",
   "👍🏽"
+  "👍🏿"
 ];
 const filters = [
   "mcompand",
