@@ -229,10 +229,10 @@ client.on("message", async message => {
           embedbuilder(client, message, "RED", "Not a right number!", "so i use number 1!")
           userinput = 1;
         }
-        if (Number(userinput) < 0 && Number(userinput) >= 15) {
-          embedbuilder(client, message, "RED", "Not a right number!", "so i use number 1!")
-          userinput = 1;
-        }
+      //  if (Number(userinput) < 0 && Number(userinput) >= 15) {
+       //   embedbuilder(client, message, "RED", "Not a right number!", "so i use number 1!")
+         // userinput = 1;
+     //  }
         searchembed.delete({ timeout: Number(client.ws.ping) });
       }).catch(() => { userinput = 404 });
       if (userinput === 404) {
