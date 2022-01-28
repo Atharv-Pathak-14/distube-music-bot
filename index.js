@@ -620,8 +620,8 @@ async function playsongyes(message, queue, song) {
 
       .setColor("#fffff0")
       .setTitle("Playing Song!")
-      .setDescription(`Song: \`${song.name}\``)
-      .addField("⏱ Duration:", ` \`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
+      .setDescription(`Song: **${song.name}**`)
+      .addField("⏱ Duration:", ` ${queue.formattedCurrentTime} / ${song.formattedDuration}`, true)
       .setFooter(client.user.username, client.user.displayAvatarURL())
 
     var playingMessage = await message.channel.send(embed1)
@@ -807,8 +807,8 @@ function curembed(message) {
     embed = new Discord.MessageEmbed()
       .setColor("#fffff0")
       .setTitle("Playing Song!")
-      .setDescription(`Song: [\`${song.name}\`](${song.url})`)
-      .addField("⏱ Duration:", `\`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
+      .setDescription(`Song: **${song.name}**`)
+      .addField("⏱ Duration:", `${queue.formattedCurrentTime} / ${song.formattedDuration}`, true)
 
       .setFooter(client.user.username, client.user.displayAvatarURL())
 
