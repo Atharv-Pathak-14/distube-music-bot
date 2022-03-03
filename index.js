@@ -84,7 +84,7 @@ const filters = [
 client.login(TON); //start the bot
 
 //log when ready and status
-client.on("ready", () => {
+client.once("ready", () => {
   console.log(` :: Bot has started as :: ${client.user.tag}`);
   client.user.setPresence({ status: "online" }); //change to online
 
