@@ -7,7 +7,6 @@ const TON = process.env['TOKEN'];
 const { getLyrics } = require('genius-lyrics-api');
 const DisTube = require("distube");
 const radio = require("./radio");
-const { keep_alive } = require("./keep_alive");
 const config = {
   PREFIX: "..",
   token: "",
