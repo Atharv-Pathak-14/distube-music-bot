@@ -16,7 +16,7 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@7.x'
       -run:
-         name: install ffmpeg
+         name: install-ffmpeg
          command: 'sudo apt install ffmpeg'
       - run:
           name: installing
