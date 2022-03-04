@@ -83,7 +83,19 @@ const filters = [
 client.login(TON); //start the bot
 
 //log when ready and status
-client.on("ready", () => {
+client.on("message", async message => {
+
+  if (message.channel.id == 'CHANNEL ID') {
+
+    if (message.author.bot) return;
+
+      let content = message.content;
+
+        if(!content) return;
+
+            chatbot.getReply(content).then(r => message.channel.send(r));
+
+client.once("ready", () => {
   console.log(` :: Bot has started as :: ${client.user.tag}`);
   client.user.setPresence({ status: "online" }); //change to online
 
