@@ -20,4 +20,4 @@ jobs:
           command: npm install
       - run:
           name: starting
-          command: npm start
+          command: npm test
