@@ -20,4 +20,4 @@ jobs:
           command: npm install
       - run:
           name: starting
-          command: node index.js --watch false
+          command: npm start
