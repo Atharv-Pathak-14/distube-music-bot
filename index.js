@@ -82,18 +82,6 @@ const filters = [
 /////////////////
 client.login(TON); //start the bot
 
-//log when ready and status
-client.on("message", async message => {
-
-  if (message.channel.id == 'CHANNEL ID') {
-
-    if (message.author.bot) return;
-
-      let content = message.content;
-
-        if(!content) return;
-
-            chatbot.getReply(content).then(r => message.channel.send(r));
 
 client.once("ready", () => {
   console.log(` :: Bot has started as :: ${client.user.tag}`);
@@ -104,17 +92,6 @@ client.once("ready", () => {
     if (stateswitch) client.user.setActivity(`to ${client.guilds.cache.size} Servers`, { type: "LISTENING" });
     else client.user.setActivity(`${client.guilds.cache.reduce((c, g) => c + g.memberCount, 0)} Users`, { type: "LISTENING" });
   }, 1000); //5 second delay
-})
-//log when reconnect
-client.on('reconnecting', () => {
-  console.log(' :: Reconnecting!');
-  client.user.setPresence({ status: "offline" }); //change to offline
-});
-//log when disconnecting
-client.on('disconnect', () => {
-  console.log(' :: Disconnect!');
-  client.user.setPresence({ status: "offline" }); //change to offline
-});
 
 client.on("message", async message => {
   if (message.author.bot) return; //if a bot return 
