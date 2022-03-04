@@ -81,12 +81,11 @@ const filters = [
 /////////////////
 //////Events/////
 /////////////////
-client.login(TON); //start the bot
 
 //log when ready and status
 client.once("ready", () => {
   console.log(` :: Bot has started as :: ${client.user.tag}`);
-  client.user.setPresence({ status: "online" }); //change to online
+  //change to online
 
   setInterval(() => {
     stateswitch = !stateswitch; //change state
@@ -874,3 +873,4 @@ function delay(delayInms) {
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }   
+client.login(TON); //start the bot
