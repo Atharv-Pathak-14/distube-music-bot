@@ -7,6 +7,7 @@ const TON = process.env['TOKEN'];
 const { getLyrics } = require('genius-lyrics-api');
 const DisTube = require("distube");
 const radio = require("./radio");
+const { keep_alive } = require("./keep_alive");
 const config = {
   PREFIX: "..",
   token: "",
@@ -82,7 +83,7 @@ const filters = [
 /////////////////
 client.login(TON); //start the bot
 
-
+//log when ready and status
 client.once("ready", () => {
   console.log(` :: Bot has started as :: ${client.user.tag}`);
   client.user.setPresence({ status: "online" }); //change to online
@@ -92,6 +93,7 @@ client.once("ready", () => {
     if (stateswitch) client.user.setActivity(`to ${client.guilds.cache.size} Servers`, { type: "LISTENING" });
     else client.user.setActivity(`${client.guilds.cache.reduce((c, g) => c + g.memberCount, 0)} Users`, { type: "LISTENING" });
   }, 1000); //5 second delay
+})
 
 client.on("message", async message => {
   if (message.author.bot) return; //if a bot return 
