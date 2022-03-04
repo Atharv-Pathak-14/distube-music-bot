@@ -4,7 +4,7 @@
   "description": "Discord music bot using Distube",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node . --watch false",
     "start": "node index.js --watch false"
   },
   "author": "Navaneeth K M",
