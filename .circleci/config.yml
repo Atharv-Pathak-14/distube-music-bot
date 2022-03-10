@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - build
-
+background: true
 jobs:
   build:
     docker:
