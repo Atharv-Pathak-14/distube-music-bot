@@ -2,6 +2,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnavaneethkm004%2Fdistube-music-bot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnavaneethkm004%2Fdistube-music-bot?ref=badge_shield)
 
 
+
 An advanced Music Bot based on distube.js.org
 
 **NO API-KEY NEEDED!** That's because it uses a scraper (`distube (ytdl)`)!
